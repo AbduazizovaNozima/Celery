@@ -26,3 +26,5 @@ def update_user_age_every_5_minutes():
     return "Barcha foydalanuvchilarning yoshi yangilandi."
 
 
+
+
