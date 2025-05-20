@@ -16,7 +16,7 @@ def sleepy_task():
 
 
 @shared_task
-def update_user_age_every_5_minutes():
+def update_user_age_every_5_seconds():
     users = models.User.objects.all()
     for user in users:
         new_age = str(random.randint(18, 50))

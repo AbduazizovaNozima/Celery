@@ -1,4 +1,10 @@
-from __future__ import absolute_import, unicode_literals
+
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    from backports.zoneinfo import ZoneInfo
+
+
 import os
 from celery import Celery
 

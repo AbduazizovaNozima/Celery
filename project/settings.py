@@ -71,13 +71,13 @@ CELERY_TASK_SERIALIZER = 'json'
 # CELERY_BEAT_SCHEDULE = {
 #     'run-at-specific-time': {
 #         'task': 'app.tasks.sleepy_task',
-#         'schedule': crontab(hour=16, minute=00),
+#         'schedule': crontab(hour=17, minute=31),
 #     },
 # }
 
 CELERY_BEAT_SCHEDULE = {
     'run-every-5-minutes': {
-        'task': 'app.tasks.update_user_age_every_5_minutes',
+        'task': 'app.tasks.update_user_age_every_5_seconds',
         'schedule': 5.0,
     },
 }
@@ -112,7 +112,7 @@ DATABASES = {
         "ENGINE": env.str("DB_ENGINE"),
         "NAME": env.str("DB_NAME"),
         "USER": env.str("DB_USER"),
-        "PASSWORD": env.get_value("DB_PASSWORD"),
+        "PASSWORD": env.str("DB_PASSWORD"),
         "HOST": env.str("DB_HOST"),
         "PORT": env.str("DB_PORT"),
         "ATOMIC_REQUESTS": True,
