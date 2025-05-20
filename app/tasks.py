@@ -2,12 +2,6 @@ from celery import shared_task
 import random
 from . import models
 
-# @shared_task
-# def sleepy_task(duration):
-#     time.sleep(duration)
-#     print(f"✅ {duration} sekund uxlab chiqdi!")
-#     return f"Slept for {duration} seconds"
-
 
 @shared_task
 def sleepy_task():
