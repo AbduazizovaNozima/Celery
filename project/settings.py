@@ -18,9 +18,12 @@ from celery.schedules import crontab
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
-STATIC_ROOT = str(STATIC_ROOT)
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
 
 
 env = environ.Env()
